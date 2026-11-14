@@ -1,0 +1,76 @@
+{
+  "status": "published_operational_zone_vs_adjacent_reference",
+  "source": {
+    "archive": "Wueller et al. (2026), Zenodo 10.5281/zenodo.17084058",
+    "archive_url": "https://zenodo.org/records/17084058",
+    "feature": "SP01 ExplorationArea_2km polygon; published 2 km astronaut EVA exploration radius",
+    "terrain": "NASA GSFC PGDA LDEM_80S_20MPP_ADJ, clipped 20 m LOLA DEM"
+  },
+  "target": {
+    "region": "Slater Plain",
+    "site": "SP01",
+    "latitude": -87.4783,
+    "longitude": 124.521
+  },
+  "definitions": {
+    "operational_zone": "Published SP01 2 km exploration polygon (not the full Slater Plain boundary).",
+    "adjacent_reference": "Annulus 2\u20134 km from the published SP01 point, outside the operational polygon by construction.",
+    "terrain_resolution_m": 20.0,
+    "slope_cutoffs": "Descriptive fractions from 20 m DEM-derived slope; not the paper's exact buffered HLS suitability mask."
+  },
+  "operational_zone_polygon_area_km2": 13.359,
+  "published_hls_suitability": {
+    "source_raster": "HLS_LandingAreas_8\u00b0_-100m_buffer.tif",
+    "interpretation": "Published area satisfying HLS landing-slope and 100 m buffer criteria; positive raster cells denote included suitable area, zero cells are outside the suitable area.",
+    "pixel_size_m": [
+      20.0,
+      21.69
+    ],
+    "cells_in_exploration_zone": 30790,
+    "suitable_cells_in_exploration_zone": 4186,
+    "suitable_area_km2": 1.816,
+    "suitable_fraction_of_exploration_zone": 0.136
+  },
+  "dem_bounds_projected_m": [
+    53020.0,
+    -53340.0,
+    73020.0,
+    -33340.0
+  ],
+  "operational_zone": {
+    "valid_pixels": 33405,
+    "valid_area_km2": 13.362,
+    "relief_p95_minus_p05_m": 397.55,
+    "mean_slope_degrees": 9.971,
+    "p95_slope_degrees": 20.261,
+    "mean_3x3_elevation_std_m": 2.92,
+    "fraction_slope_le_5deg": 0.2363,
+    "fraction_slope_le_8deg": 0.4584
+  },
+  "published_hls_suitable_pixels": {
+    "valid_pixels": 4545,
+    "valid_area_km2": 1.818,
+    "relief_p95_minus_p05_m": 99.62,
+    "mean_slope_degrees": 3.358,
+    "p95_slope_degrees": 6.165,
+    "mean_3x3_elevation_std_m": 0.98,
+    "fraction_slope_le_5deg": 0.8414,
+    "fraction_slope_le_8deg": 0.9965
+  },
+  "adjacent_2_to_4km_ring": {
+    "valid_pixels": 92264,
+    "valid_area_km2": 36.906,
+    "relief_p95_minus_p05_m": 878.96,
+    "mean_slope_degrees": 9.3,
+    "p95_slope_degrees": 19.356,
+    "mean_3x3_elevation_std_m": 2.72,
+    "fraction_slope_le_5deg": 0.2989,
+    "fraction_slope_le_8deg": 0.5207
+  },
+  "limitations": [
+    "The published polygon is the 2 km walking/EVA exploration buffer around SP01, not a mapped geologic boundary of Slater Plain.",
+    "The 2\u20134 km annulus is a project-defined local reference, not an official NASA or USGS region.",
+    "LOLA 20 m posting includes interpolation and cannot resolve all small craters or boulders; the 5 m LOLA mosaic and NAC imagery are needed for finer hazards.",
+    "This local Moon-to-Moon contrast does not change the cross-planet score rankings, which require matched Earth data and scale."
+  ]
+}

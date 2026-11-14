@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d1719">
+  <title>Field Analog Atlas — Earth to Moon & Mars</title>
+  <link rel="preconnect" href="https://unpkg.com"><link rel="preconnect" href="https://assets.science.nasa.gov">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.170.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.170.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">✳</span><span>FIELD ANALOG<br><b>ATLAS</b></span></a>
+    <nav><a class="active" href="#explore">Explore</a><a href="#worlds">Worlds</a><a href="#method">Method</a></nav>
+    <span class="status"><i></i> RESEARCH PROTOTYPE</span>
+  </header>
+  <main id="top">
+    <section class="intro" id="explore">
+      <div><p class="eyebrow">EARTH ANALOG SCREENING · V 0.3</p><h1>Training for other worlds<br><em>starts here.</em></h1><p class="lede">Explore Earth landscapes against two field targets: Slater Plain at the lunar south pole and Jezero crater on Mars.</p></div>
+      <div class="intro-note"><span class="note-index">01 / 03</span><span class="note-rule"></span><p>Terrain is the first evidence layer.<br><b>Scores are comparative signals, not suitability ratings.</b></p></div>
+    </section>
+    <section class="workspace">
+      <div class="globe-panel">
+        <div class="panel-head"><div><p class="eyebrow">EARTH CANDIDATES</p><h2>Three places to investigate</h2></div><span class="drag-hint">DRAG TO ROTATE <span>↗</span></span></div>
+        <div class="globe-stage" id="earth-stage"><canvas id="earth-globe" aria-label="Interactive globe showing Earth analog candidates"></canvas><div class="globe-overlay"><span>EARTH · 1×</span><span>NASA BLUE MARBLE</span></div><div class="globe-tip">Select a marker<br><span>or a site below</span></div></div>
+        <div class="site-list" id="site-list"></div>
+        <div class="legend"><span><i class="dot moon"></i> Slater Plain / Moon</span><span><i class="dot mars"></i> Jezero / Mars</span><span class="legend-note">Marker glow reflects relative terrain score</span></div>
+      </div>
+      <aside class="detail-panel" id="site-detail" aria-live="polite"></aside>
+    </section>
+    <section class="worlds-section" id="worlds">
+      <div class="section-title"><div><p class="eyebrow">FIELD TARGETS</p><h2>Two worlds, two distinct terrains</h2></div><p>Rotate each globe to orient yourself. Select a target for its comparison.</p></div>
+      <div class="world-grid">
+        <article class="world-card lunar"><div class="world-top"><div><span class="world-kicker">TARGET 01 · MOON</span><h3>Slater Plain</h3><p>South polar highlands · candidate point SP01</p></div><button class="focus-btn" data-target="moon">OPEN TARGET ↗</button></div><div class="mini-globe-wrap"><canvas id="moon-globe" aria-label="Interactive Moon globe highlighting Slater Plain"></canvas><span class="planet-caption">LOLA / LROC GLOBAL MAP</span></div><div class="world-foot"><span>Representative analysis window · 20 × 20 km</span><span>SP01 · 87.478°S, 124.521°E</span></div></article>
+        <article class="world-card martian"><div class="world-top"><div><span class="world-kicker">TARGET 02 · MARS</span><h3>Jezero crater</h3><p>Perseverance landing region · western Isidis Planitia</p></div><button class="focus-btn" data-target="mars">OPEN TARGET ↗</button></div><div class="mini-globe-wrap"><canvas id="mars-globe" aria-label="Interactive Mars globe highlighting Jezero crater"></canvas><span class="planet-caption">MOLA SHADED RELIEF</span></div><div class="world-foot"><span>Regional terrain comparison · ~500 m cells</span><span>18.4°N, 77.6°E</span></div></article>
+      </div>
+    </section>
+    <section class="method-section" id="method"><div class="method-head"><p class="eyebrow">HOW TO READ THIS</p><h2>Evidence first. Claims kept narrow.</h2></div><div class="method-grid"><div><span>01</span><h3>Measured so far</h3><p>Local relief, mean slope, and neighborhood elevation variability, summarized at approximately 500 m cells.</p></div><div><span>02</span><h3>Not measured yet</h3><p>Mineralogy, temperature, dust, illumination, water/ice, and operational hazards remain open evidence layers.</p></div><div><span>03</span><h3>Score meaning</h3><p>An exploratory, equal-weight terrain similarity using a clipped relative-distance formula. It is not ML, a probability, or a training-site certification.</p></div></div><div class="sources"><b>DATA SOURCES</b><span>NASA SRTMGL1 V003 · LOLA LDEM_80S_20MPP_ADJ · MGS MOLA MEGDR 128 ppd</span><a href="../results/terrain_readout.md">Read the full terrain readout ↗</a></div></section>
+  </main>
+  <footer><span>FIELD ANALOG ATLAS</span><span>Exploratory research interface · November 2026</span><a href="../README.md">Project notes ↗</a></footer>
+  <script type="module" src="app.js"></script>
+</body></html>

@@ -45,6 +45,17 @@
       "caveats": "Nominal pixel spacing is 20 m, but LOLA track density varies and cells are interpolated. Use effective-resolution/count/error layers when available; crop is regional context centered on SP01, not the candidate-region polygon. Cite Barker et al. 2023, Planetary Science Journal 4, 183."
     },
     {
+      "id": "moon_sp01_landing_suitability",
+      "body": "Moon",
+      "theme": "operations_and_topography",
+      "product": "Wueller et al. 2026 complementary geospatial data: candidate landing sites, 2 km exploration polygons, and HLS suitable landing-area raster",
+      "url": "https://zenodo.org/records/17084058",
+      "doi": "10.5281/zenodo.17084058",
+      "access": "Zenodo Landing_Sites.zip archive",
+      "use": "Define the SP01 local astronaut exploration zone and screen the published slope-qualified HLS landing areas against LOLA terrain",
+      "caveats": "The 2 km polygon is an EVA exploration buffer around one representative landing site, not the boundary of the full Slater Plain candidate region. The HLS mask uses the paper's slope and 100 m buffer criteria; it is not a safety certification. Cite Wueller et al. 2026."
+    },
+    {
       "id": "moon_diviner_gdr",
       "body": "Moon",
       "theme": "thermal_and_material",

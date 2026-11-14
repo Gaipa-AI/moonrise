@@ -70,6 +70,33 @@ the former scores remain in v2 for provenance. These are regional-window scores:
 the 20 km window includes surrounding topography and is not a measurement of
 the level plain alone.
 
+## SP01 exploration zone versus adjacent terrain
+
+I used Wueller et al.'s published SP01 point and 2 km exploration-area polygon,
+then compared it with a project-defined 2–4 km annulus outside the polygon. The
+archive also contains a raster of areas meeting the paper's HLS landing
+criteria: slopes from 0–8° and a 100 m buffer from steeper terrain. The paper
+reports 77 km² meeting those criteria across the full Slater Plain region; the
+SP01 exploration zone contains 1.816 km² of those pixels (13.6% of the local
+zone). [Dataset archive](https://zenodo.org/records/17084058), [study and
+method](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JE009434).
+
+| SP01 area at 20 m DEM scale | Relief p95–p05 (m) | Mean slope (°) | 3 × 3 elevation SD (m) |
+|---|---:|---:|---:|
+| Full 2 km exploration polygon | 397.55 | 9.971 | 2.92 |
+| Published HLS-suitable pixels inside polygon | 99.62 | 3.358 | 0.98 |
+| Adjacent 2–4 km reference annulus | 878.96 | 9.300 | 2.72 |
+
+The suitable landing patches have lower relief and slope than the whole walking
+zone. The full zone's mean slope exceeds 8° because it includes the surrounding
+craters and rims, while only 13.6% of it is marked suitable in the published
+mask. The adjacent annulus is a local reference we defined for this prototype;
+it is not an official lunar-region boundary. The mask is a study criterion, not
+a landing-safety certification. Detailed values are in
+[`slater_sp01_zone_analysis.json`](../data/processed/slater_sp01_zone_analysis.json);
+the map is
+[`slater_sp01_zone_map.png`](../data/processed/slater_sp01_zone_map.png).
+
 The strongest numerical match for Harrat Khaybar is slope and local roughness;
 its regional relief remains lower than Jezero's. Makgadikgadi's low relief is
 consistent with its pan setting, but it is a weak match to this rugged Jezero
@@ -84,10 +111,10 @@ for studying Martian playa deposits, mineral processes, or subsurface radar.
   context from planetary laser altimetry.
 - MOLA includes interpolated cells; this window is regional-scale and must not
   be used to infer rover-scale roughness.
-- The Moon sample spans a polar grid-centered square, not a mission landing
-- The Slater Plain window is centered on one published representative point,
-  not the full Artemis candidate-region polygon. Its 20 km square includes
-  surrounding terrain beyond the plain.
+- The 20 km Slater Plain window is centered on a published representative point,
+  not a geologic boundary of the Artemis candidate region.
+- The published 2 km polygon is SP01's exploration buffer, not the full Slater
+  Plain boundary; the adjacent annulus is project-defined.
 - The supplied 240 m LOLA product supports regional relief, but cannot resolve
   many small craters, boulders, or landing hazards. The 20 m follow-up improves
   regional characterization but still does not support boulder-scale claims.

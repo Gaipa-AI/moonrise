@@ -69,6 +69,15 @@ required by this optional extraction script; NumPy alone is enough to use the
 precomputed JSON results. The 20 m pixel spacing does not mean uniform 20 m
 effective resolution because the LOLA DEM interpolates between tracks.
 
+The local SP01 comparison is reproducible with
+[`analyze_slater_sp01_zone.py`](analyze_slater_sp01_zone.py). It uses the
+published 2 km EVA exploration polygon and landing-suitability raster in
+`data/raw/Landing_Sites_Wueller_2026.zip`, then compares that zone with the
+adjacent 2–4 km annulus. Results and the overview map are under
+`data/processed/`. The 2 km polygon is an operational radius around SP01, not
+the boundary of the entire Slater Plain candidate region. This workflow needs
+Rasterio, PyShp, NumPy, and Pillow.
+
 ## Scoring interface
 
 `scoring.py` accepts feature values for an Earth region and a target profile.
@@ -85,8 +94,9 @@ analysis shows the ranking is reasonably stable.
 
 ## Next implementation steps
 
-1. Define the Slater Plain region boundary and choose separate plain-scale and
-   crater-scale windows around SP01.
+1. Locate or construct a clearly labeled Slater Plain candidate-region
+   footprint; the current published geometry defines SP01's EVA radius, not the
+   region boundary.
 2. Add higher-resolution Earth DEM chips before making crater-scale
    cross-planet comparisons; the current SRTM tiles only support the roughly
    0.5 km comparison.
