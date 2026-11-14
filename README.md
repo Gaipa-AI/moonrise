@@ -52,6 +52,10 @@ planetary-analog and field-suitability review.
 
 ## Data acquisition and provenance
 
+Install the third-party Python libraries used by the analysis scripts with
+`python -m pip install -r requirement.txt` from this folder. Python standard
+library modules are not included in that file.
+
 See [`sources.json`](sources.json) for the initial source register. Large
 planetary rasters should not be checked into git. Store downloaded inputs in a
 configured data directory, keep checksums and product labels in a manifest, and

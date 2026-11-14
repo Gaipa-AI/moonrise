@@ -1,0 +1,6 @@
+# Third-party Python packages used by the analog_research scripts.
+# Standard-library modules (json, pathlib, math, etc.) are not listed.
+numpy
+rasterio
+pyshp
+Pillow
