@@ -1,0 +1,364 @@
+{
+  "schema_version": "1.0",
+  "status": "provisional_data_derived_terrain_similarity_not_probability_or_ml_prediction",
+  "model": {
+    "name": "relative_linear_terrain_similarity_v3",
+    "formula_per_feature": "max(0, 1 - abs(Earth - target) / (scale_factor * abs(target)))",
+    "aggregate": "unweighted mean of the three terrain feature similarities",
+    "default_scale_factor": 2.0,
+    "sensitivity_scale_factors": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "features": [
+      "p95-p05 local relief",
+      "Mean slope",
+      "3x3-cell elevation standard deviation"
+    ],
+    "meaning": "The feature reaches zero at a difference of twice the target value under the default setting."
+  },
+  "earth_source": "NASA SRTMGL1 V003, existing roughly 0.5 km regional summaries",
+  "lunar_source": "NASA GSFC PGDA LOLA LDEM_80S_20MPP_ADJ, 20 m regional crop aggregated to 500 m",
+  "mars_source": "MGS MOLA MEGDR 128 pixels/degree, existing Jezero regional summary",
+  "analysis_window": "20 km x 20 km centered on SP01 for the Moon, Earth candidate centers and Jezero; approximately 0.5 km analysis cells.",
+  "caveats": [
+    "This is not a trained machine-learning model; there are no labeled analog/non-analog training data.",
+    "The lunar 20 m grid has interpolated LOLA cells and does not imply 20 m effective measurement resolution.",
+    "The ROI is centered on SP01 and is not the official Slater Plain candidate-region polygon.",
+    "This compares terrain only, not mineralogy, temperature, dust, water/ice, radiation, pressure, gravity, or operational safety.",
+    "The three-feature equal-weight score and scale factor are exploratory; the candidate Earth sample is small and preselected.",
+    "A score is not a probability, site equivalence claim, or astronaut-training suitability certification."
+  ],
+  "rankings_by_target": {
+    "moon": [
+      {
+        "earth_site": "Harrat Khaybar, Saudi Arabia",
+        "target_body": "moon",
+        "target_region": "Slater Plain (representative candidate point SP01)",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 37.6,
+          "1.5": 58.4,
+          "2.0": 68.8,
+          "3.0": 79.2
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 68.8,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 548.33,
+            "target_value": 1456.18,
+            "absolute_difference": 907.85,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 37.66,
+              "1.5": 58.44,
+              "2.0": 68.83,
+              "3.0": 79.22
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 2.85,
+            "target_value": 7.478,
+            "absolute_difference": 4.628,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 38.11,
+              "1.5": 58.74,
+              "2.0": 69.06,
+              "3.0": 79.37
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 20.39,
+            "target_value": 55.05,
+            "absolute_difference": 34.66,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 37.04,
+              "1.5": 58.03,
+              "2.0": 68.52,
+              "3.0": 79.01
+            }
+          }
+        ]
+      },
+      {
+        "earth_site": "Lake Magadi, Kenya",
+        "target_body": "moon",
+        "target_region": "Slater Plain (representative candidate point SP01)",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 22.56,
+          "1.5": 48.38,
+          "2.0": 61.28,
+          "3.0": 74.19
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 61.28,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 266.39,
+            "target_value": 1456.18,
+            "absolute_difference": 1189.79,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 18.29,
+              "1.5": 45.53,
+              "2.0": 59.15,
+              "3.0": 72.76
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 1.798,
+            "target_value": 7.478,
+            "absolute_difference": 5.68,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 24.04,
+              "1.5": 49.36,
+              "2.0": 62.02,
+              "3.0": 74.68
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 13.96,
+            "target_value": 55.05,
+            "absolute_difference": 41.09,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 25.36,
+              "1.5": 50.24,
+              "2.0": 62.68,
+              "3.0": 75.12
+            }
+          }
+        ]
+      },
+      {
+        "earth_site": "Makgadikgadi Pans, Botswana",
+        "target_body": "moon",
+        "target_region": "Slater Plain (representative candidate point SP01)",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 1.05,
+          "1.5": 34.04,
+          "2.0": 50.53,
+          "3.0": 67.02
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 50.53,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 8.06,
+            "target_value": 1456.18,
+            "absolute_difference": 1448.12,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 0.55,
+              "1.5": 33.7,
+              "2.0": 50.28,
+              "3.0": 66.85
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 0.095,
+            "target_value": 7.478,
+            "absolute_difference": 7.383,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 1.27,
+              "1.5": 34.18,
+              "2.0": 50.64,
+              "3.0": 67.09
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 0.74,
+            "target_value": 55.05,
+            "absolute_difference": 54.31,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 1.34,
+              "1.5": 34.23,
+              "2.0": 50.67,
+              "3.0": 67.11
+            }
+          }
+        ]
+      }
+    ],
+    "mars": [
+      {
+        "earth_site": "Harrat Khaybar, Saudi Arabia",
+        "target_body": "mars",
+        "target_region": "Jezero crater / Perseverance landing region",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 87.16,
+          "1.5": 91.44,
+          "2.0": 93.58,
+          "3.0": 95.72
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 93.58,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 548.33,
+            "target_value": 762.05,
+            "absolute_difference": 213.72,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 71.95,
+              "1.5": 81.3,
+              "2.0": 85.98,
+              "3.0": 90.65
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 2.85,
+            "target_value": 2.816,
+            "absolute_difference": 0.034,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 98.79,
+              "1.5": 99.2,
+              "2.0": 99.4,
+              "3.0": 99.6
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 20.39,
+            "target_value": 18.66,
+            "absolute_difference": 1.73,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 90.73,
+              "1.5": 93.82,
+              "2.0": 95.36,
+              "3.0": 96.91
+            }
+          }
+        ]
+      },
+      {
+        "earth_site": "Lake Magadi, Kenya",
+        "target_body": "mars",
+        "target_region": "Jezero crater / Perseverance landing region",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 57.87,
+          "1.5": 71.92,
+          "2.0": 78.94,
+          "3.0": 85.96
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 78.94,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 266.39,
+            "target_value": 762.05,
+            "absolute_difference": 495.66,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 34.96,
+              "1.5": 56.64,
+              "2.0": 67.48,
+              "3.0": 78.32
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 1.798,
+            "target_value": 2.816,
+            "absolute_difference": 1.018,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 63.85,
+              "1.5": 75.9,
+              "2.0": 81.92,
+              "3.0": 87.95
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 13.96,
+            "target_value": 18.66,
+            "absolute_difference": 4.7,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 74.81,
+              "1.5": 83.21,
+              "2.0": 87.41,
+              "3.0": 91.6
+            }
+          }
+        ]
+      },
+      {
+        "earth_site": "Makgadikgadi Pans, Botswana",
+        "target_body": "mars",
+        "target_region": "Jezero crater / Perseverance landing region",
+        "terrain_similarity_pct_by_scale_factor": {
+          "1.0": 2.8,
+          "1.5": 35.2,
+          "2.0": 51.4,
+          "3.0": 67.6
+        },
+        "default_scale_factor": 2.0,
+        "default_score_pct": 51.4,
+        "features": [
+          {
+            "feature": "p95-p05 local relief",
+            "earth_value": 8.06,
+            "target_value": 762.05,
+            "absolute_difference": 753.99,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 1.06,
+              "1.5": 34.04,
+              "2.0": 50.53,
+              "3.0": 67.02
+            }
+          },
+          {
+            "feature": "Mean slope",
+            "earth_value": 0.095,
+            "target_value": 2.816,
+            "absolute_difference": 2.721,
+            "unit": "degrees",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 3.37,
+              "1.5": 35.58,
+              "2.0": 51.69,
+              "3.0": 67.79
+            }
+          },
+          {
+            "feature": "3x3-cell elevation standard deviation",
+            "earth_value": 0.74,
+            "target_value": 18.66,
+            "absolute_difference": 17.92,
+            "unit": "m",
+            "similarity_pct_by_scale_factor": {
+              "1.0": 3.97,
+              "1.5": 35.98,
+              "2.0": 51.98,
+              "3.0": 67.99
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "product": "NASA GSFC PGDA A New View of the Lunar South Pole from LOLA",
+  "source_url": "https://pgda.gsfc.nasa.gov/data/LOLA_20mpp/LDEM_80S_20MPP_ADJ.TIF",
+  "site": {
+    "name": "Slater Plain SP01",
+    "latitude": -87.478,
+    "longitude": 124.521
+  },
+  "crop": {
+    "width_m": 20000,
+    "height_m": 20000,
+    "pixel_m": 20,
+    "file": "D:\\Codex\\Moonrise\\NILF\\analog_research\\data\\processed\\slater_sp01_lola_20m_20km.tif"
+  },
+  "projection_center_xy_m": [
+    63019.7,
+    -43346.3
+  ],
+  "scales": {
+    "20m_grid": {
+      "pixels": 1000000,
+      "valid_cell_fraction": 1.0,
+      "relief_p95_minus_p05_m": 1458.03,
+      "mean_slope_degrees": 8.874,
+      "mean_3x3_elevation_std_m": 2.59
+    },
+    "40m_grid": {
+      "pixels": 250000,
+      "valid_cell_fraction": 1.0,
+      "relief_p95_minus_p05_m": 1458.02,
+      "mean_slope_degrees": 8.685,
+      "mean_3x3_elevation_std_m": 5.06
+    },
+    "100m_grid": {
+      "pixels": 40000,
+      "valid_cell_fraction": 1.0,
+      "relief_p95_minus_p05_m": 1458.07,
+      "mean_slope_degrees": 8.399,
+      "mean_3x3_elevation_std_m": 12.24
+    },
+    "500m_grid": {
+      "pixels": 1600,
+      "valid_cell_fraction": 1.0,
+      "relief_p95_minus_p05_m": 1456.18,
+      "mean_slope_degrees": 7.478,
+      "mean_3x3_elevation_std_m": 55.05
+    }
+  },
+  "limitations": [
+    "This is regional context centered on representative point SP01, not a surveyed Slater Plain site boundary.",
+    "The LOLA 20 m grid is interpolated between laser tracks; nominal pixel spacing is not equivalent to independent 20 m measurements.",
+    "Compare Earth analogs at matched coarser scales and with resolution caveats.",
+    "Terrain similarity scores remain screening indicators, not learned-model probabilities or training suitability certifications."
+  ]
+}

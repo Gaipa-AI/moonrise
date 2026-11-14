@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-11-14",
+  "sources": [
+    {
+      "id": "earth_srtm",
+      "body": "Earth",
+      "theme": "topography",
+      "product": "NASA SRTM Global 1 arc-second (SRTMGL1 V003) or global 3 arc-second (SRTMGL3 V003)",
+      "url": "https://doi.org/10.5067/MEASURES/SRTM/SRTMGL1.003",
+      "access": "NASA LP DAAC / Earthdata Search; Earthdata account may be needed for protected cloud objects",
+      "use": "Earth elevation, slope, local relief, and roughness in covered latitudes",
+      "caveats": "SRTM coverage is approximately 60 degrees N to 56 degrees S; radar-derived elevation can include vegetation/building surfaces and voids. Match analysis scales to planetary grids."
+    },
+    {
+      "id": "earth_aster_gdem",
+      "body": "Earth",
+      "theme": "topography",
+      "product": "ASTER Global Digital Elevation Model V003",
+      "url": "https://lpdaac.usgs.gov/products/astgtmv003/",
+      "access": "NASA LP DAAC / Earthdata Search",
+      "use": "Supplementary Earth elevation coverage, especially outside SRTM latitude limits",
+      "caveats": "Optical stereo DEM with known artifacts; compare quality masks and avoid treating it as identical to a bare-earth terrain model."
+    },
+    {
+      "id": "moon_lola_gdr",
+      "body": "Moon",
+      "theme": "topography",
+      "product": "LRO LOLA Gridded Data Record (GDR)",
+      "url": "https://pds.nasa.gov/ds-view/pds/viewDataset.jsp?dsid=LRO-L-LOLA-4-GDR-V1.0",
+      "doi": "10.17189/1520642",
+      "access": "NASA Planetary Data System Geosciences Node",
+      "use": "Lunar elevation and derived terrain summaries",
+      "caveats": "Product contains multiple grids and map products; choose projection/resolution and product labels explicitly."
+    },
+    {
+      "id": "moon_lola_south_pole_20m",
+      "body": "Moon",
+      "theme": "topography",
+      "product": "NASA GSFC PGDA A New View of the Lunar South Pole from LOLA, LDEM_80S_20MPP_ADJ",
+      "url": "https://pgda.gsfc.nasa.gov/products/90",
+      "doi": "10.60903/gsfcpgda-lola-spole",
+      "access": "NASA GSFC PGDA cloud-optimized GeoTIFF; supports HTTP range reads",
+      "use": "Slater Plain SP01 regional elevation and terrain metrics at finer scale than the uploaded 240 m LOLA grid",
+      "caveats": "Nominal pixel spacing is 20 m, but LOLA track density varies and cells are interpolated. Use effective-resolution/count/error layers when available; crop is regional context centered on SP01, not the candidate-region polygon. Cite Barker et al. 2023, Planetary Science Journal 4, 183."
+    },
+    {
+      "id": "moon_diviner_gdr",
+      "body": "Moon",
+      "theme": "thermal_and_material",
+      "product": "LRO Diviner gridded data records",
+      "url": "https://pds.nasa.gov/ds-view/pds/viewProfile.jsp?dsid=LRO-L-DLRE-5-GDR-V1.0",
+      "access": "NASA Planetary Data System",
+      "use": "Lunar surface thermal observations and selected thermal-infrared material indicators",
+      "caveats": "Separate day/night products, local-time and illumination effects, temporal mapping cycles, and product uncertainty/count layers must be retained."
+    },
+    {
+      "id": "mars_mola_megdr",
+      "body": "Mars",
+      "theme": "topography",
+      "product": "MGS MOLA Mission Experiment Gridded Data Records",
+      "url": "https://pds-geosciences.wustl.edu/missions/mgs/megdr.html",
+      "access": "NASA PDS Geosciences Node",
+      "use": "Global Mars elevation at several posted resolutions",
+      "caveats": "Gridded altimetry resolution and effective spatial support differ from Earth DEMs; account for scale before comparing terrain metrics."
+    },
+    {
+      "id": "mars_hrsc_mola_blend",
+      "body": "Mars",
+      "theme": "topography",
+      "product": "USGS HRSC/MOLA blended global DEM v2, 200 m/pixel",
+      "url": "https://astrogeology.usgs.gov/search/map/Mars/Topography/HRSC_MOLA_Blend/Mars_HRSC_MOLA_BlendShade_Global_200mp_v2",
+      "access": "USGS Astrogeology; product page provides GeoTIFF",
+      "use": "Higher-detail global Mars terrain context",
+      "caveats": "Large global raster (about 11 GB); HRSC component is CC BY-SA 3.0 IGO and MOLA is CC0. Preserve attribution and share-alike requirements where applicable."
+    },
+    {
+      "id": "earth_modis_lst",
+      "body": "Earth",
+      "theme": "thermal",
+      "product": "MODIS/Terra MOD11A1 V061 daily 1 km land surface temperature and emissivity",
+      "url": "https://lpdaac.usgs.gov/products/mod11a1v061/",
+      "access": "NASA LP DAAC / Earthdata Search",
+      "use": "Quality-screened Earth land surface temperature distributions, day/night",
+      "caveats": "Land surface temperature is not air temperature; cloud/quality filters and observation time matter. Earth atmosphere and hydrology make direct planetary equivalence impossible."
+    },
+    {
+      "id": "earth_geology_glim",
+      "body": "Earth",
+      "theme": "geology",
+      "product": "Global Lithological Map database (GLiM)",
+      "url": "https://www.geo.uni-hamburg.de/en/geologie/forschung/aquatische-geochemie/glim.html",
+      "access": "Research dataset download from University of Hamburg",
+      "use": "Coarse lithological context for Earth candidate screening",
+      "caveats": "Global generalized classes are not a mineralogical match to orbital spectral data; use as context and validate promising sites locally."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "status": "proposed_sites_for_data_screening_not_ranked_results",
+  "candidates": [
+    {
+      "id": "makgadikgadi_nwtetwe_sua",
+      "name": "Makgadikgadi Pans (Ntwetwe and Sua pans)",
+      "country": "Botswana",
+      "center_latitude": -20.5,
+      "center_longitude": 25.5,
+      "target_body": "Mars",
+      "candidate_for": ["playa and paleolake morphology", "evaporites and hydrated materials", "wind erosion", "subsurface radar instrument trials"],
+      "why_include": "Strong, literature-supported Mars playa analogue with basin-scale geomorphology and recent shallow-subsurface GPR work. It can serve as a positive-control case when assessing whether the scoring pipeline recognizes established analog settings.",
+      "known_mismatches": ["Earth atmosphere and gravity", "episodic liquid water and active biology", "local hydrology and sediment chemistry differ from Mars", "not a current-day Mars climate analog"],
+      "screening_priority": "high",
+      "references": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0032063324001077",
+        "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JE009817"
+      ]
+    },
+    {
+      "id": "lake_magadi",
+      "name": "Lake Magadi and surrounding soda-lake evaporites",
+      "country": "Kenya",
+      "center_latitude": -1.9,
+      "center_longitude": 36.3,
+      "target_body": "Mars",
+      "candidate_for": ["evaporite mineral formation", "silica-rich and carbonate chemistry", "seasonal wet-dry transitions", "spectral mineral mapping"],
+      "why_include": "A regionally distinctive and comparatively underused candidate in the brief's framing. Published work documents unusual evaporite minerals and satellite hyperspectral mapping, making it useful for a data-backed mineral/remote-sensing study. The analog claim should be restricted to aqueous alteration and evaporite processes, not broad environmental similarity.",
+      "known_mismatches": ["hyperalkaline brines and hot springs are unlike most target surface conditions", "active water and biology", "no match to lunar vacuum, gravity, or radiation"],
+      "screening_priority": "high",
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/35401055/",
+        "https://www.sciencedirect.com/science/article/pii/S0303243411001176"
+      ]
+    },
+    {
+      "id": "harrat_khaybar",
+      "name": "Harrat Khaybar volcanic field",
+      "country": "Saudi Arabia",
+      "center_latitude": 25.7,
+      "center_longitude": 39.9,
+      "target_body": "Moon and Mars",
+      "candidate_for": ["basaltic volcanic landforms", "lava-flow and cone terrain", "roughness and slope for mobility testing", "remote mapping and navigation trials"],
+      "why_include": "A large basaltic volcanic field outside the brief's familiar examples. Include as an exploratory screening candidate for landform and mobility comparisons; do not describe it as an established astronaut-training analog without field validation and literature review.",
+      "known_mismatches": ["Earth weathering, atmosphere, gravity, and biological cover", "geochemistry and eruption conditions are not identical to lunar or Martian volcanism", "global DEM resolution cannot resolve all hazards or block-scale roughness"],
+      "screening_priority": "exploratory",
+      "references": [
+        "https://onlinelibrary.wiley.com/doi/10.1029/2026GC013186"
+      ]
+    }
+  ]
+}

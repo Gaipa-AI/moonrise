@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0",
+  "status": "measured_terrain_features_not_final_similarity_scores",
+  "method": {
+    "feature_family": "regional topography",
+    "window": "approximately 20 km by 20 km per site",
+    "analysis_scale": "Earth DEM block-aggregated to approximately 0.5 km; LOLA aggregated to 0.48 km; MOLA retained at approximately 0.46 km",
+    "features": [
+      "p95-p05 elevation relief",
+      "mean slope",
+      "mean 3x3 elevation standard deviation"
+    ],
+    "limitations": [
+      "This is a transparent terrain feature extraction, not a trained ML model or final score.",
+      "Terrain similarity does not imply similarity in geology, temperature, atmosphere, radiation, gravity, or field-training suitability.",
+      "The LOLA south-pole ROI is a grid-centered sample, not a selected Artemis landing-site polygon.",
+      "MOLA zeros are masked as indicated by the supplied ENVI header; interpolated MOLA cells remain in the sample.",
+      "Earth windows are centered on the candidate coordinates and are not field-verified boundaries."
+    ]
+  },
+  "earth": [
+    {
+      "body": "Earth",
+      "site": "Makgadikgadi Pans, Botswana",
+      "source": "NASA SRTMGL1 V003 S21E025",
+      "source_sha256": "c610b20b0b9c2c9f8b1056643d1f2dd6359d1330eb597f7d404b6109b9ff7a9b",
+      "roi_center_lat_lon": [
+        -20.5,
+        25.5
+      ],
+      "roi_bounds_lat_lon": [
+        -20.589983,
+        25.404095,
+        -20.410017,
+        25.595905
+      ],
+      "roi_intended_size_km": [
+        20,
+        20
+      ],
+      "native_resolution_arcseconds": 1,
+      "grid_shape_rows_cols": [
+        40,
+        40
+      ],
+      "valid_cell_fraction": 1.0,
+      "effective_cell_size_m": {
+        "x": 492.4,
+        "y": 493.9
+      },
+      "relief_p95_minus_p05_m": 8.06,
+      "mean_slope_degrees": 0.095,
+      "mean_3x3_elevation_std_m": 0.74,
+      "elevation_p05_m": 904.0,
+      "elevation_p50_m": 904.43,
+      "elevation_p95_m": 912.06
+    },
+    {
+      "body": "Earth",
+      "site": "Lake Magadi, Kenya",
+      "source": "NASA SRTMGL1 V003 S02E036",
+      "source_sha256": "98f094f3e77f86091227dc4dcabeee8b658e10827107085415dd68e40eda2449",
+      "roi_center_lat_lon": [
+        -1.9,
+        36.3
+      ],
+      "roi_bounds_lat_lon": [
+        -1.989983,
+        36.210119,
+        -1.810017,
+        36.389881
+      ],
+      "roi_intended_size_km": [
+        20,
+        20
+      ],
+      "native_resolution_arcseconds": 1,
+      "grid_shape_rows_cols": [
+        40,
+        40
+      ],
+      "valid_cell_fraction": 1.0,
+      "effective_cell_size_m": {
+        "x": 494.5,
+        "y": 493.9
+      },
+      "relief_p95_minus_p05_m": 266.39,
+      "mean_slope_degrees": 1.798,
+      "mean_3x3_elevation_std_m": 13.96,
+      "elevation_p05_m": 604.71,
+      "elevation_p50_m": 683.16,
+      "elevation_p95_m": 871.1
+    },
+    {
+      "body": "Earth",
+      "site": "Harrat Khaybar, Saudi Arabia",
+      "source": "NASA SRTMGL1 V003 N25E039",
+      "source_sha256": "639a84d5d0dca8c5f6780c46148a63ca162513dbd30ce7bed156c83314e96b91",
+      "roi_center_lat_lon": [
+        25.7,
+        39.9
+      ],
+      "roi_bounds_lat_lon": [
+        25.610017,
+        39.800307,
+        25.789983,
+        39.999693
+      ],
+      "roi_intended_size_km": [
+        20,
+        20
+      ],
+      "native_resolution_arcseconds": 1,
+      "grid_shape_rows_cols": [
+        40,
+        42
+      ],
+      "valid_cell_fraction": 1.0,
+      "effective_cell_size_m": {
+        "x": 473.7,
+        "y": 493.9
+      },
+      "relief_p95_minus_p05_m": 548.33,
+      "mean_slope_degrees": 2.85,
+      "mean_3x3_elevation_std_m": 20.39,
+      "elevation_p05_m": 1260.62,
+      "elevation_p50_m": 1544.45,
+      "elevation_p95_m": 1808.94
+    }
+  ],
+  "moon": {
+    "body": "Moon",
+    "site": "Slater Plain (representative candidate point SP01)",
+    "source": "LRO LOLA GDR LDEM_75S_240M V2.1",
+    "source_sha256": "a0ebbad0a2650c742ed2d4ec1314aa095f869ba800f817b1b72eeb9194345c36",
+    "roi_center_lat_lon": [
+      -87.478,
+      124.521
+    ],
+    "roi_intended_size_km": [
+      20,
+      20
+    ],
+    "native_resolution_m": 240,
+    "vertical_reference": "sample * 0.5 m relative to 1,737,400 km reference radius; constant removed for terrain metrics",
+    "grid_shape_rows_cols": [
+      41,
+      41
+    ],
+    "valid_cell_fraction": 1.0,
+    "effective_cell_size_m": {
+      "x": 480.0,
+      "y": 480.0
+    },
+    "relief_p95_minus_p05_m": 1464.75,
+    "mean_slope_degrees": 7.453,
+    "mean_3x3_elevation_std_m": 52.62,
+    "elevation_p05_m": -1171.88,
+    "elevation_p50_m": -218.0,
+    "elevation_p95_m": 292.88
+  },
+  "mars": {
+    "body": "Mars",
+    "site": "Jezero crater / Perseverance landing region",
+    "source": "MGS MOLA MEGDR 128 ppd tile megt44n000hb",
+    "source_sha256": "14022166079edafc99650f354e5a634e6eb2c2ea544b444c01cd8ee55437df36",
+    "roi_center_lat_lon": [
+      18.4446,
+      77.4509
+    ],
+    "roi_bounds_lat_lon": [
+      18.275885,
+      77.273048,
+      18.613315,
+      77.628752
+    ],
+    "roi_intended_size_km": [
+      20,
+      20
+    ],
+    "native_resolution_m": {
+      "x": 439.3,
+      "y": 463.1
+    },
+    "vertical_reference": "MOLA topography relative to Mars areoid",
+    "grid_shape_rows_cols": [
+      45,
+      48
+    ],
+    "valid_cell_fraction": 1.0,
+    "effective_cell_size_m": {
+      "x": 439.3,
+      "y": 463.1
+    },
+    "relief_p95_minus_p05_m": 762.05,
+    "mean_slope_degrees": 2.816,
+    "mean_3x3_elevation_std_m": 18.66,
+    "elevation_p05_m": -2669.0,
+    "elevation_p50_m": -2535.0,
+    "elevation_p95_m": -1906.95
+  }
+}

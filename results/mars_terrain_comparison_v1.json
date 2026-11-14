@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "status": "provisional_data_derived_terrain_similarity_not_probability_or_ml_prediction",
+  "model": {
+    "name": "relative_linear_terrain_similarity_v1",
+    "formula_per_feature": "max(0, 1 - abs(Earth - Mars) / (scale_factor * abs(Mars)))",
+    "aggregate": "unweighted mean of the three terrain feature similarities",
+    "default_scale_factor": 2.0,
+    "sensitivity_scale_factors": [
+      1.0,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "features": [
+      "p95-p05 local relief",
+      "Mean slope",
+      "3x3-cell elevation standard deviation"
+    ],
+    "meaning": "The feature reaches zero at a difference of twice the Mars reference value under the default setting. The score is descriptive and depends on this explicit scaling choice."
+  },
+  "earth_sources": [
+    "NASA SRTMGL1 V003"
+  ],
+  "mars_source": "MGS MOLA MEGDR 128 pixels/degree, Jezero ROI",
+  "target_reference": "Jezero crater / Perseverance landing region",
+  "analysis_window": "Approximately 20 km x 20 km for each Earth site and the Mars landing region; all elevation grids aggregated or retained at approximately 0.5 km support.",
+  "caveats": [
+    "This is not a trained machine-learning model: no labeled analog/non-analog training data are available.",
+    "It measures terrain only; it does not score mineralogy, temperature, wind/dust, water/ice, radiation, pressure, gravity, biology, access, or operational safety.",
+    "The unweighted three-feature aggregate and scale factor are provisional research choices, not empirically calibrated parameters.",
+    "MOLA has interpolated bins and relatively sparse equatorial tracks; the ROI is regional context, not rover-scale terrain.",
+    "A high terrain score indicates matching summaries at this chosen scale, not site equivalence or astronaut-training suitability."
+  ],
+  "ranking": [
+    {
+      "earth_site": "Harrat Khaybar, Saudi Arabia",
+      "mars_reference": "Jezero crater / Perseverance landing region",
+      "terrain_similarity_pct_by_scale_factor": {
+        "1.0": 87.16,
+        "1.5": 91.44,
+        "2.0": 93.58,
+        "3.0": 95.72
+      },
+      "default_scale_factor": 2.0,
+      "default_score_pct": 93.58,
+      "features": [
+        {
+          "feature": "p95-p05 local relief",
+          "earth_value": 548.33,
+          "target_value": 762.05,
+          "absolute_difference": 213.72,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 71.95,
+            "1.5": 81.3,
+            "2.0": 85.98,
+            "3.0": 90.65
+          }
+        },
+        {
+          "feature": "Mean slope",
+          "earth_value": 2.85,
+          "target_value": 2.816,
+          "absolute_difference": 0.034,
+          "unit": "degrees",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 98.79,
+            "1.5": 99.2,
+            "2.0": 99.4,
+            "3.0": 99.6
+          }
+        },
+        {
+          "feature": "3x3-cell elevation standard deviation",
+          "earth_value": 20.39,
+          "target_value": 18.66,
+          "absolute_difference": 1.73,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 90.73,
+            "1.5": 93.82,
+            "2.0": 95.36,
+            "3.0": 96.91
+          }
+        }
+      ]
+    },
+    {
+      "earth_site": "Lake Magadi, Kenya",
+      "mars_reference": "Jezero crater / Perseverance landing region",
+      "terrain_similarity_pct_by_scale_factor": {
+        "1.0": 57.87,
+        "1.5": 71.92,
+        "2.0": 78.94,
+        "3.0": 85.96
+      },
+      "default_scale_factor": 2.0,
+      "default_score_pct": 78.94,
+      "features": [
+        {
+          "feature": "p95-p05 local relief",
+          "earth_value": 266.39,
+          "target_value": 762.05,
+          "absolute_difference": 495.66,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 34.96,
+            "1.5": 56.64,
+            "2.0": 67.48,
+            "3.0": 78.32
+          }
+        },
+        {
+          "feature": "Mean slope",
+          "earth_value": 1.798,
+          "target_value": 2.816,
+          "absolute_difference": 1.018,
+          "unit": "degrees",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 63.85,
+            "1.5": 75.9,
+            "2.0": 81.92,
+            "3.0": 87.95
+          }
+        },
+        {
+          "feature": "3x3-cell elevation standard deviation",
+          "earth_value": 13.96,
+          "target_value": 18.66,
+          "absolute_difference": 4.7,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 74.81,
+            "1.5": 83.21,
+            "2.0": 87.41,
+            "3.0": 91.6
+          }
+        }
+      ]
+    },
+    {
+      "earth_site": "Makgadikgadi Pans, Botswana",
+      "mars_reference": "Jezero crater / Perseverance landing region",
+      "terrain_similarity_pct_by_scale_factor": {
+        "1.0": 2.8,
+        "1.5": 35.2,
+        "2.0": 51.4,
+        "3.0": 67.6
+      },
+      "default_scale_factor": 2.0,
+      "default_score_pct": 51.4,
+      "features": [
+        {
+          "feature": "p95-p05 local relief",
+          "earth_value": 8.06,
+          "target_value": 762.05,
+          "absolute_difference": 753.99,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 1.06,
+            "1.5": 34.04,
+            "2.0": 50.53,
+            "3.0": 67.02
+          }
+        },
+        {
+          "feature": "Mean slope",
+          "earth_value": 0.095,
+          "target_value": 2.816,
+          "absolute_difference": 2.721,
+          "unit": "degrees",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 3.37,
+            "1.5": 35.58,
+            "2.0": 51.69,
+            "3.0": 67.79
+          }
+        },
+        {
+          "feature": "3x3-cell elevation standard deviation",
+          "earth_value": 0.74,
+          "target_value": 18.66,
+          "absolute_difference": 17.92,
+          "unit": "m",
+          "similarity_pct_by_scale_factor": {
+            "1.0": 3.97,
+            "1.5": 35.98,
+            "2.0": 51.98,
+            "3.0": 67.99
+          }
+        }
+      ]
+    }
+  ]
+}
