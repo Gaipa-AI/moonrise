@@ -96,19 +96,47 @@ They must be versioned with each result set. Do not combine unlike themes into
 one headline score until the theme weights are justified and sensitivity
 analysis shows the ranking is reasonably stable.
 
+## Similarity score table
+| Earth site | Slater Plain score | Jezero score |
+|---|---:|---:|
+| Harrat Khaybar | 69.07 | 93.58 |
+| Lake Magadi | 61.47 | 78.94 |
+| Makgadikgadi Pans | 50.54 | 51.40 |
+
+## View Interactive Web visual
+Launch
+`cd webapp && py -m http.server 8000` <br>
+Deployed on hugging face
+[Sites](https://huggingface.co/spaces/Onyoin/field-analog-atlas)
+<br>
+<img src="https://files.fm/f/zabkatwsjdbdyvvg" alt="thumbnail" height="30px" width="50px"/>
+<br>
+[![Project Logo](thumbnail.png)](https://files.fm/f/zabkatwsjdbdyvvg)
+<!-- ![Thumbnail]('https://files.fm/f/zabkatwsjdbdyvvg')<br> -->
+<!-- ![Thumbnail]('C:\Users\user\Downloads\thumbnail.png') -->
+
+
+## Search Earth Data from NASA used to process the image & terrain data
+Find those files at this link: [data-files](https://files.fm/u/mrqw7844v25p7g66)
+
+
+
 ## Next implementation steps
 
-1. Locate or construct a clearly labeled Slater Plain candidate-region
+1. Introduce more dimensions of analogy such as Temperature, illumination, and environmental    extremes Water, ice, permafrost, and other potential resources Dust, wind, erosion, and other atmospheric or surface processes.
+2. Give structure this python scripts used in this project to form an official model that can undergo several self-supervised training schemes and output as a direct data api
+2. Locate or construct a clearly labeled Slater Plain candidate-region
    footprint; the current published geometry defines SP01's EVA radius, not the
    region boundary.
-2. Add higher-resolution Earth DEM chips before making crater-scale
+3. Add higher-resolution Earth DEM chips before making crater-scale
    cross-planet comparisons; the current SRTM tiles only support the roughly
    0.5 km comparison.
-3. Add thermal and material layers as independent score families.
-4. Expand beyond the three preselected Earth candidates and test rankings on
+4. Add thermal and material layers as independent score families.
+5. Expand beyond the three preselected Earth candidates and test rankings on
    held-out regions.
-5. Build the map from the resulting versioned GeoJSON/COG-derived summaries.
+6. Build the map from the resulting versioned GeoJSON/COG-derived summaries.
+
 
 Exploratory rankings are saved in `results/`; they use only three preselected
-Earth samples and a few terrain features, so they are a prototype readout rather
+Earth samples and a few topography features, so they are a prototype readout rather
 than a global ranking or validated suitability assessment.
