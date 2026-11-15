@@ -7,7 +7,7 @@ An interactive static research prototype for exploring Earth terrain candidates 
 From this directory, start a static web server in PowerShell:
 
 ```powershell
-& 'C:\Users\user\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m http.server 8000
+& 'py -m http.server 8000
 ```
 
 Then open <http://localhost:8000>. If Python is on your PATH, `py -m http.server 8000` also works. The browser needs access to the internet to load Three.js, Google Fonts, and remote NASA/ESA base imagery. The analysis outputs and Slater map are included in the app assets.
